@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Common.fs" />
+    <Compile Include="CommonCFG.fs" />
+    <Compile Include="CommonGraph.fs" />
+    <Compile Include="CommonHex.fs" />
+    <Compile Include="CommonMath.fs" />
+    <Compile Include="CommonPrint.fs" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="TextCopy" Version="6.2.1" />
+	</ItemGroup>
+
+</Project>
