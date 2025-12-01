@@ -6,8 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Day01.fs" />
+    <Content Include="input01.txt" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode2025.FSharp.Common\AdventOfCode2025.FSharp.Common.fsproj" />
