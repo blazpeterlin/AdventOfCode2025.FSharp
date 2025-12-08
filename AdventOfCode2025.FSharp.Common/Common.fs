@@ -18,6 +18,8 @@ let grabNums (str:string) : int list =
     
     
 let manhattan (x0,y0) (x1,y1) = abs(x1-x0)+abs(y1-y0)
+let manhattan3 (x0,y0,z0) (x1,y1,z1) = abs(x1-x0)+abs(y1-y0)+abs(z1-z0)
+let euclidean3sq (x0:int64,y0:int64,z0:int64) (x1,y1,z1) = (x1-x0)*(x1-x0)+(y1-y0)*(y1-y0)+(z1-z0)*(z1-z0)
 
 let asTuple2<'a> (lst: 'a list) : 'a*'a =
     match lst with
