@@ -116,6 +116,8 @@ let rec permutations list =
 
 module Operators =
     let (+..) (x0,y0) (x1,y1) = (x0+x1,y0+y1)
+    let (++..) (x0:int64,y0:int64) (x1,y1) = (x0+x1,y0+y1)
+    let (--..) (x0:int64,y0:int64) (x1,y1) = (x0-x1,y0-y1)
     let (+...) (x0,y0,z0) (x1,y1,z1) = (x0+x1,y0+y1,z0+z1)
     let (-..) (x0,y0) (x1,y1) = (x0-x1,y0-y1)
     let (-...) (x0,y0,z0) (x1,y1,z1) = (x0-x1,y0-y1,z0-z1)
