@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Z3\Api.fs" />
+    <Compile Include="Z3\Bool.fs" />
+    <Compile Include="Z3\Int.fs" />
+    <Compile Include="Z3\Real.fs" />
+    <Compile Include="Z3\BitVec.fs" />
+    <Compile Include="Z3\Array.fs" />
+    <Compile Include="Z3\Addons.fs" />
+    <Compile Include="Z3\Function.fs" />
     <Compile Include="Common.fs" />
     <Compile Include="CommonCFG.fs" />
     <Compile Include="CommonGraph.fs" />
@@ -16,6 +24,7 @@
 
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Z3" Version="4.11.2" />
 		<PackageReference Include="NetTopologySuite" Version="2.6.0" />
 		<PackageReference Include="TextCopy" Version="6.2.1" />
 	</ItemGroup>
