@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Day11_countDfs.fs" />
     <Compile Include="Day11_specific.fs" />
     <Content Include="input11.txt" />
     <Compile Include="Day10.fs" />

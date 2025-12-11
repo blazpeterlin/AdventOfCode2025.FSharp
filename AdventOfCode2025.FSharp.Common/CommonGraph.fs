@@ -14,8 +14,10 @@ let parseGrid lns char2val =
     |> List.concat
     |> Map.ofList
 
+let (|Default|) defaultValue input =
+    defaultArg input defaultValue
 
-let AStarSeq (pos0:'a) (heuristic: 'a->int) (isFinish:'a->bool) (getNextPos:'a->('a*int) seq) =
+let AStarSeqInner (pos0:'a) (heuristic: 'a->int) (isFinish:'a->bool) (getNextPos:'a->('a*int) seq) (haveHistory:bool) =
     let pq = PriorityQueue() // mutable
     let h0 = heuristic pos0
     pq.Enqueue((pos0,[pos0],0), 0+h0)
@@ -31,7 +33,14 @@ let AStarSeq (pos0:'a) (heuristic: 'a->int) (isFinish:'a->bool) (getNextPos:'a->
                     pq.EnqueueRange (allNextPos 
                                         |> Seq.map (fun (pos,cost) -> 
                                                         let h = heuristic pos
-                                                        (pos,pos::history,costSoFar+cost),costSoFar+cost+h))
+                                                        let newHistory = if haveHistory then pos::history else []
+                                                        (pos,newHistory,costSoFar+cost),costSoFar+cost+h))
         }
         |> seq
     r
+
+
+let AStarSeq (pos0:'a) (heuristic: 'a->int) (isFinish:'a->bool) (getNextPos:'a->('a*int) seq) =
+    AStarSeqInner pos0 heuristic isFinish getNextPos true
+let AStarSeqNoHistory (pos0:'a) (heuristic: 'a->int) (isFinish:'a->bool) (getNextPos:'a->('a*int) seq) =
+    AStarSeqInner pos0 heuristic isFinish getNextPos false
